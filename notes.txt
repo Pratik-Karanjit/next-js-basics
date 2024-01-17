@@ -1,0 +1,36 @@
+next js is a file based routing system
+
+In Next.js, the pages in the pages directory automatically become routes in your application. 
+
+The file-based routing system is one of the key features of Next.js.
+
+After creating users folder with page.tsx file name
+When you access the URL /users, Next.js recognizes the file structure and maps it to the corresponding route. So, the page.tsx file inside the users folder becomes the component for the /users route.
+Make sure to write the file names for which you want to create a page for in lower case. As next js looks for this convention of routing. In simple words, lower case letters create pages.
+
+Can create nested routes by creating another folder insides the parent route "users".
+
+
+Client side navigation is done by using <Link> which allows only the dedicated thing to load and not load all the other unnecessary details like fonts, js files (Can be viewed in network panel)
+
+
+Client side rendering in next js
+This is done by writing 'use client' on the top of the file
+
+What this does is that it renders that particular component in client side. This allows the functionalities of button clicks, useEffects, local storage and so on.
+So why do this?
+Because next js has server side rendering too which does not require a dedicated backend. So components can be sent to SSR for faster loading of pages as it has smaller bundles, SEO availability which is not available in CSR. 
+Also, SSR is more secure as it has APIs secured which is not in CSR.
+
+These sum up the advantages of using next js with React and not just ReactJS.
+
+
+Always fetch data in SSR
+This cuts off the one extra trip that CSR goes through.
+The browser initially gets blank document then calls backend to fetch data and then render content. This does not make search engine friendly.
+
+
+Caching
+Caching only used in fetch function so it cant be used in axios
+Next js automatically stores data in data cache. This is stored in file system. 
+Fetching data from file system is always faster than network that is done in React.
