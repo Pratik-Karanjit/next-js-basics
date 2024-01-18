@@ -34,3 +34,45 @@ Caching
 Caching only used in fetch function so it cant be used in axios
 Next js automatically stores data in data cache. This is stored in file system. 
 Fetching data from file system is always faster than network that is done in React.
+
+
+Rendering
+2 types: Client Side and Server SIde
+Server side has 2 types
+Static and dynamic
+Static means at build time
+Dynamic means at request time
+Eg:
+
+const UsersPage = async() => {
+   const res = await fetch('https://jsonplaceholder.typicode.com/users'
+   }   
+this code snippet if ran with npm run build and then npm start will render the pages staticly
+this happens as next js defaultly sets fetched data into cache
+
+To change it dynamically,
+const UsersPage = async() => {
+   const res = await fetch('https://jsonplaceholder.typicode.com/users'
+   ,{cache:'no-store'})
+The no store tells next js to not store it in cache as the values are going to change later
+*Only store data in cache if that particular data does not change over time*
+
+Whereas, npm run dev without writing cache: no-store gives dynamic output(local time string for example) 
+that means it is dynamic in development mode and not production mode 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
