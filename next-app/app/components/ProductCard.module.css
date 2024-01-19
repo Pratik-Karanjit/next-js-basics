@@ -1,3 +1,5 @@
+/* Css module is a file that is created for removing the className matchings that may occur over the course of developing a project */
+
 .card {
     padding: 1rem;
     border: 1px solid #ccc;
