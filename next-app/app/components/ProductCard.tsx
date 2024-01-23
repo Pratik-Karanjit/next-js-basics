@@ -4,6 +4,7 @@ import styles from './ProductCard.module.css'
 
 styles.card
 
+//call all components here
 const ProductCard = () => {
   return (
     <div className={styles.card}>
